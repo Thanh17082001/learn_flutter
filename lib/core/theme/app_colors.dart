@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static const Color primary =
-      Color.fromRGBO(255, 128, 116, 0.612); // Màu chủ đạo
+   static const LinearGradient primaryGradient = LinearGradient(
+    begin: Alignment.bottomLeft,
+    end: Alignment.topRight,
+    colors: [
+      Color(0xFF9EC9C2), // xanh ngọc
+      Color(0xFFF8A17E), // cam hồng
+
+    ],
+  );
+  static const Color primary =Color.fromRGBO(185, 1, 1, 1); // Màu chủ đạo
   static const Color secondary = Color(0xFF1976D2); // Màu phụ
   static const Color background = Colors.white; // Màu nền
   static const Color white = Colors.white; // Màu nền

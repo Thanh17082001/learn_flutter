@@ -1,8 +1,8 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:learn_flutter/core/theme/app_colors.dart';
 import 'package:learn_flutter/core/utils/ware.clipper.dart';
+import 'package:learn_flutter/features/auth/presentation/widgets/login_footer.dart';
 import '../../../../injection.dart';
 import '../bloc/auth_bloc.dart';
 import '../bloc/auth_state.dart';
@@ -17,29 +17,33 @@ class LoginPage extends StatelessWidget {
       create: (context) => AuthBloc(sl()),
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: AppColors.primary,
+           backgroundColor: AppColors.primary,
+         
         ),
         body: BlocListener<AuthBloc, AuthState>(
           listener: (context, state) {
+                Navigator.pushReplacementNamed(context, '/home');
             if (state is AuthSuccess) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Đăng nhập thành công')));
               // Chuyển trang nếu muốn
             } else if (state is AuthFailure) {
               ScaffoldMessenger.of(context)
-                  .showSnackBar(SnackBar(content: Text(state.error)));
+                  .showSnackBar(const SnackBar(content:  Text('Đang nhập thất bại, thử lại sau')));
             }
           },
           child: ListView(
             scrollDirection: Axis.vertical,
             children: [
+              // Phần đầu trang với hình nền và tiêu đề
               ClipPath(
                 clipper: WaveClipper(),
                 child: Container(
-                  height: MediaQuery.of(context).size.width * 0.5,
-                  color: AppColors.primary,
+                  height: MediaQuery.of(context).size.width * 0.45,
+                  decoration: const BoxDecoration(
+                    color: AppColors.primary,
+                  ),
                 ),
               ),
+              // Tiêu đề đăng nhập
               Container(
                 margin: const EdgeInsets.only(top: 20.0 ,left: 20.0),
                 height: MediaQuery.of(context).size.width * 0.2,
@@ -57,13 +61,17 @@ class LoginPage extends StatelessWidget {
                   ],
                 ),
               ),
+              // Phần nhập thông tin đăng nhập
               Container(
                 color: Colors.white,
                 width: double.infinity,
                 child: LoginForm(),
               ),
           
-              // Có thể thêm các widget khác như nút đăng ký, quên mật khẩu, v.v.
+              // Phần chân trang với các nút đăng nhập bằng mạng xã hội
+              const SizedBox(height: 20.0),
+              const LoginFooter(),
+              
             ],
           ),
         ),

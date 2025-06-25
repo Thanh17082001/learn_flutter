@@ -4,7 +4,7 @@ class WaveClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     var path = Path();
-    path.lineTo(0, size.height - 50); // Bắt đầu từ dưới bên trái, cao hơn một chút
+    path.lineTo(0, size.height - 100); // Bắt đầu từ dưới bên trái, cao hơn một chút
 
 
   // var firstControlPoint =

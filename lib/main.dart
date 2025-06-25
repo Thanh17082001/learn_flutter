@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:learn_flutter/features/home/presentation/pages/home_page.dart';
+import 'package:learn_flutter/router.dart';
 import 'injection.dart' as di;
 import 'features/auth/presentation/pages/login_page.dart';
 
@@ -18,7 +20,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-
       theme: ThemeData(
         scaffoldBackgroundColor:
             Colors.white, // 👉 Set nền mặc định của Scaffold
@@ -33,7 +34,9 @@ class MyApp extends StatelessWidget {
           secondary: Colors.blue, // 👉 Màu phụ, ví dụ nút bấm
         ),
       ),
-      home: LoginPage(),
+      routes: appRoutes,
+
+      initialRoute: '/login',
     );
   }
 }

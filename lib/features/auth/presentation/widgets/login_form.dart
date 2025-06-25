@@ -30,7 +30,7 @@ class _LoginFormState extends State<LoginForm> {
               InputForm(
                 labelText: 'Tài khoản',
                 controller: _usernameController,
-                keyboardType: TextInputType.emailAddress,
+                keyboardType: TextInputType.text,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Vui lòng nhập tài khoản';
@@ -106,7 +106,7 @@ class _LoginFormState extends State<LoginForm> {
           borderRadius: BorderRadius.circular(10.0),
         ),
         child: !isLoading
-            ? const Text('Đang nhập',
+            ? const Text('Đăng nhập',
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 18,
