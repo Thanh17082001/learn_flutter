@@ -28,16 +28,23 @@ class InputForm extends StatefulWidget {
 class _InputFormState extends State<InputForm> {
   @override
   Widget build(BuildContext context, ) {
-      bool _obscureText = true;
     return  TextFormField(
+        style: const TextStyle(color: Colors.white, fontSize: 14.0),
       controller: widget.controller,
       keyboardType: widget.keyboardType,
       obscureText: widget.obscureText,
-        validator: widget.validator,
-      decoration:   InputDecoration(
-        
+        validator: widget.validator,     
+         decoration:   InputDecoration(
         labelText: widget.labelText,
+        labelStyle: const TextStyle(
+          color: Colors.white,
+          fontSize: 14.0,
+          ),
         hintText: widget.hintText,
+        hintStyle: const TextStyle(
+          color: Colors.white,
+          fontSize: 14.0,
+          ),
        contentPadding: const EdgeInsets.only(top: 20,bottom: 20,left: 30,right: 10),
         enabledBorder: const OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(8.0)),

@@ -36,11 +36,18 @@ flutter:
   assets:
     - .env
   uses-material-design: true
-
+  fonts:
+    - family: Montserrat
+      fonts:
+        - asset: fonts/Montserrat-Italic-VariableFont_wght.ttf
+          style: italic
+        - asset: fonts/Montserrat-VariableFont_wght.ttf
+          
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
-
 
 
 

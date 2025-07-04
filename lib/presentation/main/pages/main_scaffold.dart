@@ -50,27 +50,22 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       
-        body: Center(
-          child: IndexedStack(
-            index: visit,
-            children: pages,
-          ),
+        body: IndexedStack(
+          index: visit,
+          children: pages,
         ),
-        bottomNavigationBar: Container(
-          child: BottomBarDivider(
-            items: items,
-            top: 20,
-            backgroundColor: Colors.black,
-            color: Colors.white,
-            colorSelected: Colors.blue,
-            indexSelected: visit,
-            iconSize: 20,
-            bottom: 30,
-            onTap: (int index) => setState(() {
-              visit = index;
-            }),
-          ),
+        bottomNavigationBar: BottomBarDivider(
+          items: items,
+          top: 20,
+          color: Theme.of(context).colorScheme.onSurface,
+          colorSelected: Colors.yellow,
+          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+          indexSelected: visit,
+          iconSize: 20,
+          bottom: 30,
+          onTap: (int index) => setState(() {
+            visit = index;
+          }),
         ));
   }
 }

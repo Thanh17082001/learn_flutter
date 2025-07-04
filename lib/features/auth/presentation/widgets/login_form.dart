@@ -20,7 +20,7 @@ class _LoginFormState extends State<LoginForm> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
+      color: Colors.black,
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(
@@ -55,19 +55,15 @@ class _LoginFormState extends State<LoginForm> {
                 builder: (context, state) {
                   if (state is AuthLoading) {
                     isLoading = true;
-                  return SubmitButton();
-
-                  }
-                  else if (state is AuthFailure) {
+                    return SubmitButton();
+                  } else if (state is AuthFailure) {
                     // Khi có kết quả hoặc lỗi thì tắt loading
                     if (isLoading) {
-                        isLoading = false;
-                  return SubmitButton();
+                      isLoading = false;
+                      return SubmitButton();
                     }
                   }
                   return SubmitButton();
-
-
                 },
               )
             ],
