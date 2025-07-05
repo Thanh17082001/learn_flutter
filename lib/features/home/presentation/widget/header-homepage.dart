@@ -24,10 +24,10 @@ class HeaderHomePage extends StatelessWidget {
           children: [
             Column(
               children: [
-                const Text(
+                 Text(
                   'Total Balance',
                   style: TextStyle(
-                    color: AppColors.textPrimary,
+                    color: Theme.of(context).textTheme.bodyLarge?.color,
                     fontSize: 20.0,
                     fontWeight: FontWeight.bold,
                     fontFamily: 'Roboto',
@@ -45,20 +45,20 @@ class HeaderHomePage extends StatelessWidget {
                 const SizedBox(height: 30.0), // Khoảng cách giữa các dòng
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
+                  children:  [
+                    const Column(
                       children: [
                         Text(
                           'Income',
                           style: TextStyle(
-                            color: Theme.of(context).textTheme.bodyLarge?.color,
+                            color: Colors.white,
                             fontSize: 16.0,
                           ),
                         ),
                         Text(
                           '1.000.000 VND',
                           style: TextStyle(
-                            color: Theme.of(context).colorScheme.secondary,
+                            color: Color.fromARGB(255, 15, 48, 2),
                             fontSize: 18.0,
                             fontWeight: FontWeight.bold,
                           ),
@@ -106,10 +106,10 @@ class HeaderHomePage extends StatelessWidget {
                             fontSize: 16.0,
                           ),
                         ),
-                        Text(
+                        const Text(
                           '1.000.000 VND',
                           style: TextStyle(
-                            color: Theme.of(context).colorScheme.secondary,
+                            color: Colors.yellowAccent,
                             fontSize: 18.0,
                             fontWeight: FontWeight.bold,
                           ),

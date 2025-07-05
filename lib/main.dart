@@ -53,7 +53,7 @@ class _MyAppState extends State<MyApp> {
         brightness: Brightness.light, // hoặc Brightness.dark
         scaffoldBackgroundColor: Colors.white, // Màu nền toàn app
         primaryColor: AppColors.textPrimary, // Màu chủ đạo
-iconTheme:  IconThemeData(
+iconTheme:  const IconThemeData(
           color: Colors.black, // Màu icon mặc định
         ),
         appBarTheme:  AppBarTheme(
